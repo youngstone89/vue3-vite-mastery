@@ -12,7 +12,7 @@ onMounted(() => {
     if (chartContainer.value) {
         Highcharts.chart(chartContainer.value, {
             chart: {
-                type: 'line'
+                type: 'stack'
             },
             title: {
                 text: 'Sample Line Chart'

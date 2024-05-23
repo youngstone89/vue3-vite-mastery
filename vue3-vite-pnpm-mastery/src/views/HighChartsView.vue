@@ -1,9 +1,9 @@
 <template>
     <div>
-        <HighCharts />
+        <StackedBarChartVue />
     </div>
 </template>
 
 <script setup lang="ts">
-import HighCharts from '../components/HighCharts.vue';
+import StackedBarChartVue from '@/components/StackedBarChart.vue';
 </script>
