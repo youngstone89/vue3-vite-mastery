@@ -10,6 +10,11 @@ const router = createRouter({
       component: HomeView
     },
     {
+      path: '/highcharts',
+      name: 'highcharts',
+      component: () => import('../views/HighChartsView.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

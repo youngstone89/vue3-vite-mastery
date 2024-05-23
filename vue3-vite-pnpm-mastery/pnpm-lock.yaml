@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      highcharts:
+        specifier: ^11.4.3
+        version: 11.4.3
+      highcharts-vue:
+        specifier: ^2.0.1
+        version: 2.0.1(highcharts@11.4.3)(vue@3.4.27(typescript@5.4.5))
       pinia:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5))
@@ -1239,6 +1245,15 @@ packages:
   he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
+
+  highcharts-vue@2.0.1:
+    resolution: {integrity: sha512-7yVaKvsWlx7OgmKFXE2D99fi/0tr2A85H4KUz3jL7CRQhAwvEvXgtDIyTBGLHJsOC5L9VlppAI7k6KfIi0j0hg==}
+    peerDependencies:
+      highcharts: '>=5.0.0'
+      vue: '>=3.0.0'
+
+  highcharts@11.4.3:
+    resolution: {integrity: sha512-rMmvYvcdwyUVfnRPfiZ0PnW6TgVhoS0FTBI8fc4Fp8l8ocoC9dMecvxS6E6tm7h7LrnSGoEo3b/0IRHuLatD2w==}
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -3326,6 +3341,13 @@ snapshots:
   has-flag@4.0.0: {}
 
   he@1.2.0: {}
+
+  highcharts-vue@2.0.1(highcharts@11.4.3)(vue@3.4.27(typescript@5.4.5)):
+    dependencies:
+      highcharts: 11.4.3
+      vue: 3.4.27(typescript@5.4.5)
+
+  highcharts@11.4.3: {}
 
   hookable@5.5.3: {}
 
