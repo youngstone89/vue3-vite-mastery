@@ -14,6 +14,7 @@ import HelloWorld from './components/HelloWorld.vue';
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/highcharts">HighCharts</RouterLink>
+        <RouterLink to="/highcharts-mouse-over">HighCharts Mouse Over</RouterLink>
       </nav>
     </div>
   </header>

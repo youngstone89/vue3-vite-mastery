@@ -15,6 +15,11 @@ const router = createRouter({
       component: () => import('../views/HighChartsView.vue')
     },
     {
+      path: '/highcharts-mouse-over',
+      name: 'highcharts-mouse-over',
+      component: () => import('../views/HighChartsMouseOverView.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
