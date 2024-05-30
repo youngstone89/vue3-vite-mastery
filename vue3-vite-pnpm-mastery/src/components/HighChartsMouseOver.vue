@@ -64,6 +64,7 @@ onMounted(() => {
                     point: {
                         events: {
                             mouseOver: function () {
+                                console.log('asdfasdf')
                                 let point = this,
                                     chart = point.series.chart,
                                     padding = 20, // Space around the column
