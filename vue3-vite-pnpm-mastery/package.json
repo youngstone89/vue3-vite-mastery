@@ -20,6 +20,7 @@
     "highcharts-vue": "^2.0.1",
     "pinia": "^2.1.7",
     "v-calendar": "^3.1.2",
+    "vite-plugin-glob": "^0.3.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },

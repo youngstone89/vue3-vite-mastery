@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
+import { RouterView } from 'vue-router';
 import HelloWorld from './components/HelloWorld.vue';
+import Navigation from './components/Navigation.vue';
 </script>
 
 <template>
@@ -9,15 +10,7 @@ import HelloWorld from './components/HelloWorld.vue';
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/highcharts">HighCharts</RouterLink>
-        <RouterLink to="/highcharts-mouse-over">HighCharts Mouse Over</RouterLink>
-        <RouterLink to="/v-calendar">VCalendar</RouterLink>
-        <RouterLink to="/v-date-picker">VDatePicker</RouterLink>
-      </nav>
+      <Navigation />
     </div>
   </header>
 

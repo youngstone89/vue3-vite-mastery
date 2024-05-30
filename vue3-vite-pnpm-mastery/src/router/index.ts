@@ -1,37 +1,36 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
+
+// Function to convert CamelCase or PascalCase to hyphen-case
+function toHyphenCase(str: string): string {
+  return str.replace(/\B([A-Z])/g, '-$1').toLowerCase();
+}
+
+// Function to load all views and return routes
+function loadViewModules() {
+  const viewModules = import.meta.glob('../views/*.vue');
+  const routes = Object.keys(viewModules).map(path => {
+    const name = path.split('/').pop().replace(/\.\w+$/, ''); // Extract the file name without extension
+
+    const cleanName = name.replace(/View$/, ''); // Remove 'View' from the end of the name
+    const hyphenCaseName = toHyphenCase(cleanName)
+    console.log(hyphenCaseName)
+    return {
+      path: `/${hyphenCaseName}`, // Create a path in hyphen-case based on the cleaned file name
+      name: cleanName,
+      component: () => viewModules[path]() // Lazy load the view component
+    };
+  });
+  return routes;
+}
+
+const routes = [
+  ...loadViewModules(),
+  // You can add other static routes here
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/v-calendar',
-      name: 'v-calendar',
-      component: () => import('../views/VCalendarView.vue')
-    },
-    {
-      path: '/v-date-picker',
-      name: 'v-date-picker',
-      component: () => import('../views/VDatePickerView.vue')
-    },
-    {
-      path: '/highcharts',
-      name: 'highcharts',
-      component: () => import('../views/HighChartsView.vue')
-    },
-    {
-      path: '/highcharts-mouse-over',
-      name: 'highcharts-mouse-over',
-      component: () => import('../views/HighChartsMouseOverView.vue')
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
-  ]
-})
+  routes,
+});
 
-export default router
+export default router;
