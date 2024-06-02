@@ -14,6 +14,7 @@ import Navigation from './components/Navigation.vue';
     </div>
   </header>
 
+
   <RouterView />
 </template>
 

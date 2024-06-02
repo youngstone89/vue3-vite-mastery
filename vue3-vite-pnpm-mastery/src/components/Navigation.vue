@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav :class="$style.navigation">
         <RouterLink v-for="route in routes" :key="route.name" :to="route.path">
             {{ route.name }}
         </RouterLink>
@@ -24,4 +24,10 @@ const routes = computed(() => {
     }));
 });
 </script>
-
+<style module scoped>
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+</style>

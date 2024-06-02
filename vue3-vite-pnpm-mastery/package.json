@@ -18,6 +18,7 @@
     "@popperjs/core": "^2.11.8",
     "highcharts": "^11.4.3",
     "highcharts-vue": "^2.0.1",
+    "nanoid": "^5.0.7",
     "pinia": "^2.1.7",
     "v-calendar": "^3.1.2",
     "vite-plugin-glob": "^0.3.2",
