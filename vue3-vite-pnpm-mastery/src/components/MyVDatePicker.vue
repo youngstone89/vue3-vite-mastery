@@ -76,6 +76,18 @@ watch(range.value, (oldV, newV) => {
 }
 
 :deep(.vc-light) {
-    --vc-hover-bg: #1e3a8a;
+    --vc-hover-bg: transparent;
+    /* --vc-highlight-outline-border: black; */
+    /* --vc-select-color: black; */
+    --vc-border: black;
+}
+
+:deep(.vc-highlight-content-outline) {
+    color: red;
+}
+
+:deep(.vc-focus) {
+    outline: 0;
+    box-shadow: none;
 }
 </style>
