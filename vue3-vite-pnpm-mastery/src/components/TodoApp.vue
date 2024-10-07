@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-const newTodo = ref('')
+const newTodo = ref('INITIAL_VALUE')
 const todos = ref([
   {
     id: 1,
@@ -27,7 +27,7 @@ function createTodo() {
       {{ todo.text }}
     </div>
     <form data-test="form" @submit.prevent="createTodo()">
-      <input data-test="new-todo" v-model="newTodo" />
+      <input type="text" data-test="new-todo" v-model="newTodo" />
     </form>
   </div>
 </template>
