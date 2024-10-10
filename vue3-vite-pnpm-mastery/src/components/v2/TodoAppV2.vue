@@ -3,6 +3,9 @@
     <div v-for="todo in todos" :key="todo.id" data-test="todo">
       {{ todo.text }}
     </div>
+    <form data-test="form" @submit.prevent="createTodo">
+      <input type="text" data-test="new-todo" v-model="newTodo" />
+    </form>
   </div>
 </template>
 
@@ -11,6 +14,7 @@ export default {
   name: 'TodoAppV2',
   data() {
     return {
+      newTodo: '',
       todos: [
         {
           id: 1,
@@ -18,6 +22,15 @@ export default {
           completed: true
         }
       ]
+    }
+  },
+  methods: {
+    createTodo() {
+      this.todos.push({
+        id: 2,
+        text: this.newTodo,
+        completed: false
+      })
     }
   }
 }
