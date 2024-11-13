@@ -18,9 +18,12 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
     "highcharts": "^11.4.8",
     "highcharts-vue": "^2.0.1",
     "nanoid": "^5.0.7",
+    "node-fetch": "^3.3.2",
     "pinia": "^2.2.2",
     "v-calendar": "^3.1.2",
     "vite-plugin-glob": "^0.3.2",
