@@ -7,11 +7,20 @@ app.use(cors());
 
 app.get('/render-function', (req, res) => {
   const renderFunction = `
-    function(h) {
+    function(h, { ref, onMounted }) {
+      const count = ref(0);
+
+      function increment() {
+        count.value++;
+      }
+
       return function() {
         return h('div', [
-          h('h1', 'Dynamic Component'),
-          h('p', 'This component was loaded from a remote server!')
+          h('h1', 'Dynamic Interactive Component'),
+          h('p', \`Count: \${count.value}\`),
+          h('button', {
+            onClick: increment
+          }, 'Increment')
         ]);
       }
     }
