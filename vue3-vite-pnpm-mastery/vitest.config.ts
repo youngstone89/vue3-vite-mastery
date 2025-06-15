@@ -7,12 +7,16 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
-      globals: false, // allow Vitest APIs to be accessible within test files without import
+      globals: true, // allow Vitest APIs to be accessible within test files without import
       environment: 'jsdom', // or happy-dom
       exclude: [...configDefaults.exclude, 'e2e/**'],
       root: fileURLToPath(new URL('./', import.meta.url)),
       coverage: {
-        provider: "v8"
+        provider: 'istanbul',
+        reporter: ['text', 'html', 'json', 'lcov'],
+        reportsDirectory: './coverage', // Where reports are saved
+        include: ['src/**/*.{js,ts,vue}'], // Files to include in coverage
+        exclude: ['src/main.js', 'src/**/*.test.{js,ts}', 'src/**/*.spec.{js,ts}']
       }
     }
   })
