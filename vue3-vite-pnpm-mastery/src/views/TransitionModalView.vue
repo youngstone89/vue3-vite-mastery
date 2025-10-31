@@ -1,27 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 const showModal = ref(false)
 </script>
 <template>
   <div>
     <button @click="showModal = true">Open Modal</button>
-    <transition name="modal">
-      <div v-if="showModal" class="modal-overlay" @click="showModal = false">
-        <div
-          :class="{
-            modal: true,
-            'fade-in': showModal == true,
-            'fade-out': showModal == false
-          }"
-          @click.stop
-        >
-          <h2>Modal Title</h2>
-          <p>This is the modal content.</p>
-          <button @click="showModal = false">Close</button>
-        </div>
+    <div v-if="showModal" class="modal-overlay" @click="showModal = false">
+    </div>
+    <Transition name="modal">
+      <div class="modal" v-if="showModal">
+        <h2>Modal Title</h2>
+        <p>This is the modal content.</p>
+        <button @click="showModal = false">Close</button>
       </div>
-    </transition>
+    </Transition>
   </div>
 </template>
 <style scoped>
@@ -45,30 +38,25 @@ const showModal = ref(false)
   position: fixed;
   top: 0;
   right: 0;
-
-  transition: transform 0.3s ease-out;
 }
 
-.fade-in {
-  transform: translateX(0);
+/* define how modal enters interms of timing and move style */
+.modal-enter-active {
+  transition: all 1s ease-out;
 }
 
-.fade-out {
-  transform: translateX(100%);
+/* define how modal enters in terms of opacity and x axis move */
+.modal-enter-from {
+  transform: translateX(200px);
+  opacity: 0;
 }
 
-.modal-enter-active .modal,
-.modal-leave-active .modal {
-  transition: transform 0.3s ease-out;
+.modal-leave-active {
+  transition: all 0.5s ease-out;
 }
 
-.modal-enter-to .modal,
-.modal-leave-from .modal {
-  transform: translateX(0);
-}
-
-.modal-enter-from .modal,
-.modal-leave-to .modal {
-  transform: translateX(100%);
+.modal-leave-to {
+  transform: translateX(200px);
+  opacity: 0;
 }
 </style>
