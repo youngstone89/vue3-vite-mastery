@@ -13,7 +13,12 @@ export default defineConfig({
       '/graphql': {
         target: 'http://localhost:8080',
         changeOrigin: true // Ensure the host header is set to the target URL
-      }
+      },
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
     }
   },
   plugins: [vue(), VueDevTools()],
